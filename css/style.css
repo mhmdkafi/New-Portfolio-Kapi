@@ -1786,8 +1786,8 @@ body {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid rgba(108, 99, 255, 0.1);
     position: relative;
-    overflow: hidden;
-    height: 450px;
+    overflow: visible; /* 🔑 biar tombol gak kepotong */
+    min-height: 450px; /* ganti fixed height -> min-height */
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -1989,33 +1989,24 @@ body {
 .service-footer {
     padding: 1.5rem 2rem 2rem;
     text-align: center;
-    flex-shrink: 0;
     background: white;
     border-radius: 0 0 24px 24px;
+    margin-top: auto; /* 🔑 dorong footer ke bawah card */
+    z-index: 20;
     position: relative;
-    z-index: 10;
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: auto;
-    display: block;
 }
 
 
 .view-more-btn {    
-    /* Layout & Display */
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 0.5rem !important;
-    
-    /* Appearance */
     background: transparent !important;
     color: #6c63ff !important;
     border: 2px solid #6c63ff !important;
     padding: 12px 24px !important;
     border-radius: 30px !important;
-    
-    /* Typography */
     font-family: inherit !important;
     font-size: 0.85rem !important;
     font-weight: 600 !important;
@@ -2023,26 +2014,16 @@ body {
     letter-spacing: 0.5px !important;
     text-decoration: none !important;
     white-space: nowrap !important;
-    
-    /* Sizing */
     min-width: 160px !important;
     width: auto !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    
-    /* Positioning */
     position: relative !important;
     z-index: 1000 !important;
-    
-    /* Visibility */
     opacity: 1 !important;
     visibility: visible !important;
-    
-    /* Interaction */
     cursor: pointer !important;
     user-select: none !important;
-    
-    /* Animation */
     transition: all 0.3s ease !important;
     overflow: hidden !important;
 }
